@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Darwin Balaji Kabilan — Aspiring MS in IT &amp; Management at UT Dallas</title>
+<meta name="description" content="Salesforce CPQ Developer with hands-on Quote-to-Cash experience and two IEEE publications. Applying to MS in Information Technology and Management at UT Dallas." />
+<meta name="keywords" content="Darwin Balaji Kabilan, Salesforce CPQ Developer, MS ITM UT Dallas, Apex, IEEE publications, Madurai" />
+<meta name="author" content="Darwin Balaji Kabilan" />
+
+<meta property="og:title" content="Darwin Balaji Kabilan — Aspiring MS in IT &amp; Management" />
+<meta property="og:description" content="Salesforce CPQ Developer with two IEEE publications. Applying to UT Dallas MS in Information Technology and Management." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0e1116;
+    --bg-soft: #161a22;
+    --bg-card: #1a1f29;
+    --ink: #e8e6e1;
+    --ink-soft: #a8a59e;
+    --ink-muted: #6b6862;
+    --accent: #d4a574;
+    --accent-bright: #e6b87a;
+    --accent-dim: #8a6a4a;
+    --line: rgba(232, 230, 225, 0.08);
+    --line-strong: rgba(232, 230, 225, 0.16);
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(12px);
+    background: rgba(14, 17, 22, 0.75);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+  nav.scrolled { border-bottom-color: var(--line); }
+
+  .logo {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .logo em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .nav-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.25s;
+    position: relative;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover::after { width: 100%; }
+
+  .hero {
+    min-height: 100vh;
+    padding: 8rem 4rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(212, 165, 116, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.1s forwards;
+  }
+  .hero-meta::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 9vw, 8rem);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+    max-width: 1200px;
+  }
+  .hero h1 .line { display: block; overflow: hidden; }
+  .hero h1 .line span {
+    display: inline-block;
+    transform: translateY(110%);
+    animation: slideUp 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  }
+  .hero h1 .line:nth-child(1) span { animation-delay: 0.2s; }
+  .hero h1 .line:nth-child(2) span { animation-delay: 0.35s; }
+  .hero h1 .line:nth-child(3) span { animation-delay: 0.5s; }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 300;
+  }
+
+  .hero-tagline {
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    max-width: 620px;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.9s forwards;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s 1.1s forwards;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.95rem 1.8rem;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--line-strong);
+    background: transparent;
+    color: var(--ink);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+  .btn:hover {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+  }
+  .btn-primary:hover {
+    background: var(--accent-bright);
+    border-color: var(--accent-bright);
+  }
+  .btn svg { width: 14px; height: 14px; }
+
+  section { padding: 8rem 4rem; position: relative; }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .section-label::before {
+    content: counter(section, decimal-leading-zero);
+    font-family: var(--mono);
+    color: var(--ink-muted);
+  }
+
+  body { counter-reset: section; }
+  section { counter-increment: section; }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 4rem;
+    max-width: 900px;
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .about {
+    border-top: 1px solid var(--line);
+    background: var(--bg-soft);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .about-portrait { position: sticky; top: 8rem; }
+
+  .portrait-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  .portrait-image {
+    width: 100%;
+    aspect-ratio: 4/5;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-card);
+  }
+  .portrait-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    display: block;
+    transition: filter 0.4s ease;
+  }
+  .portrait-fallback {
+    display: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 8rem;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: var(--accent);
+  }
+  .portrait-fallback em { font-style: italic; }
+  .portrait-meta {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: var(--bg-card);
+  }
+
+  .about-content p {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .about-content p:last-child { margin-bottom: 0; }
+  .about-content p strong { font-weight: 500; color: var(--accent); }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--line);
+  }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+  .stat-num em { font-style: italic; }
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .expertise-card {
+    padding: 3rem 2.5rem;
+    background: var(--bg);
+    transition: background 0.4s ease;
+    position: relative;
+  }
+  .expertise-card:hover { background: var(--bg-soft); }
+  .expertise-card:hover .expertise-num { color: var(--accent); }
+
+  .expertise-num {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
+  }
+
+  .expertise-card h3 {
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .expertise-card h3 em { font-style: italic; color: var(--accent); }
+
+  .expertise-card p {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+
+  .expertise-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .tag {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    padding: 0.35rem 0.75rem;
+    background: rgba(212, 165, 116, 0.08);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    color: var(--accent);
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+  }
+
+  .experience {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--line);
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 1100px;
+  }
+
+  .job {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 4rem;
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--line);
+    transition: padding-left 0.4s ease;
+  }
+  .job:hover { padding-left: 1rem; }
+  .job:last-child { border-bottom: none; }
+
+  .job-period {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.1em;
+    padding-top: 0.5rem;
+  }
+  .job-period .role-tag {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.2rem 0.6rem;
+    background: rgba(212, 165, 116, 0.1);
+    color: var(--accent);
+    border-radius: 2px;
+    font-size: 0.7rem;
+  }
+
+  .job-content h3 {
+    font-family: var(--serif);
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.02em;
+  }
+  .job-company {
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+  }
+  .job-content p {
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+  .job-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+  }
+  .job-bullets {
+    list-style: none;
+    margin-bottom: 1rem;
+  }
+  .job-bullets li {
+    padding: 0.4rem 0;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .job-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+
+  .certs-wrap { border-top: 1px solid var(--line); }
+
+  .certs-section { margin-bottom: 3rem; }
+  .certs-section:last-child { margin-bottom: 0; }
+  .certs-subtitle {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .cert {
+    padding: 1.25rem;
+    border: 1px solid var(--line);
+    background: var(--bg-card);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+  }
+  .cert:hover {
+    border-color: var(--accent-dim);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+  .cert-badge {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .cert-badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  .cert:hover .cert-badge img {
+    transform: scale(1.08);
+  }
+  /* Logo-only badges (Power BI, Tableau, etc.) get a circular white background */
+  .cert-badge.logo-frame {
+    background: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  .cert-badge.logo-frame.dark {
+    background: #1a1a1a;
+  }
+  .cert-name {
+    font-size: 0.92rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+  .cert-issuer {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.05em;
+    margin-top: 0.25rem;
+  }
+  .cert-grid-superbadges {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.85rem;
+  }
+  .cert-grid-superbadges .cert {
+    padding: 1rem;
+  }
+  .cert-grid-superbadges .cert-badge {
+    width: 54px;
+    height: 54px;
+  }
+  .cert-grid-superbadges .cert-name {
+    font-size: 0.85rem;
+  }
+  /* Agentblazer status callout */
+  .agentblazer-card {
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, rgba(212, 165, 116, 0.08), rgba(212, 165, 116, 0.02));
+    border: 1px solid rgba(212, 165, 116, 0.25);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .agentblazer-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+  .agentblazer-content h4 {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    color: var(--accent);
+  }
+  .agentblazer-content p {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  .projects {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--line);
+  }
+
+  .project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .project {
+    padding: 2.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .project::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--accent);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.4s ease;
+  }
+  .project:hover { border-color: var(--line-strong); }
+  .project:hover::before { transform: scaleY(1); }
+
+  .project-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--accent);
+    line-height: 0.8;
+    margin-bottom: 1rem;
+  }
+  .project-domain {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .project h3 {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .project h3 em { font-style: italic; color: var(--accent); }
+
+  .project-desc {
+    color: var(--ink-soft);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .project-highlights {
+    list-style: none;
+    margin-bottom: 1.5rem;
+  }
+  .project-highlights li {
+    padding: 0.5rem 0;
+    color: var(--ink);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .project-highlights li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+
+  .edu-pub-wrap { border-top: 1px solid var(--line); }
+  .edu-pub-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    max-width: 900px;
+  }
+
+  .edu-block h3, .pub-block h3 {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .edu-card {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .edu-card:last-child { border-bottom: none; }
+  .edu-degree {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+  .edu-school {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+  .edu-detail {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .pub-card {
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .pub-card:last-child { border-bottom: none; }
+  .pub-title {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin-bottom: 0.4rem;
+  }
+  .pub-meta {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+  .pub-link {
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .pub-link:hover { color: var(--accent-bright); }
+
+  .contact {
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+    text-align: center;
+    padding: 10rem 4rem 6rem;
+  }
+
+  .contact-label {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .contact h2 {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 7vw, 6rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 3rem;
+  }
+  .contact h2 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .contact-email {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 0.3rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-bottom: 3rem;
+  }
+  .contact-email:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  .contact-link {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    transition: color 0.25s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .contact-link:hover { color: var(--accent); }
+
+  footer {
+    padding: 2rem 4rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.05em;
+  }
+
+  @keyframes slideUp { to { transform: translateY(0); } }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 968px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 6rem 1.5rem 3rem; }
+    section { padding: 5rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .about-portrait { position: static; max-width: 280px; }
+    .about-content p { font-size: 1.2rem; }
+    .stats { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .expertise-grid { grid-template-columns: 1fr; }
+    .job { grid-template-columns: 1fr; gap: 1rem; }
+    .project { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.5rem; }
+    .edu-pub-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .contact { padding: 6rem 1.5rem 4rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .hero-actions { flex-direction: column; align-items: stretch; }
+    .btn { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="logo">Darwin Balaji <em>Kabilan</em></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Research</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-meta">Salesforce CPQ Developer · Madurai, India · MS ITM Applicant — UT Dallas</div>
+  <h1>
+    <span class="line"><span>Bridging <em>technology</em></span></span>
+    <span class="line"><span>and <em>management</em></span></span>
+    <span class="line"><span>through Salesforce.</span></span>
+  </h1>
+  <p class="hero-tagline">
+    Salesforce CPQ Developer with hands-on Quote-to-Cash experience and an engineering background grounded in
+    Electronics and Communication — including two peer-reviewed IEEE publications. Now turning toward graduate
+    study that brings analytics, business strategy, and management thinking to the engineering work I already do.
+  </p>
+  <div class="hero-actions">
+    <a href="#contact" class="btn btn-primary">
+      Get in touch
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+    <a href="#projects" class="btn">Research &amp; work</a>
+  </div>
+</header>
+
+<section id="about" class="about">
+  <div class="section-label">About</div>
+  <h2 class="section-title">A developer with one foot in <em>research</em>, the other in <em>industry.</em></h2>
+
+  <div class="about-grid">
+    <div class="about-portrait">
+      <div class="portrait-card reveal">
+        <div class="portrait-image">
+          <img src="profile.jpg" alt="Darwin Balaji Kabilan — Salesforce CPQ Developer" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="portrait-fallback">D<em>B</em></div>
+        </div>
+        <div class="portrait-meta">
+          <span>Darwin Balaji Kabilan</span>
+          <span>Salesforce CPQ Developer</span>
+          <span>Madurai, India</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-content reveal">
+      <p>
+        I work on Salesforce CPQ and Lightning Web Components — configuring Product and Price Rules, writing
+        Apex triggers and batch jobs, and building <strong>Quote-to-Cash workflows</strong> that hold up in real
+        enterprise use.
+      </p>
+      <p>
+        Before stepping into Salesforce, I earned a B.E. in Electronics and Communication Engineering from KPR
+        Institute of Engineering and Technology, with two <strong>IEEE publications</strong> — a secured e-voting
+        system using biometric authentication, and a Universal Robot framework for safe drug delivery.
+      </p>
+      <p>
+        Today, I am extending that foundation through graduate study at the intersection of
+        <strong>information technology and management</strong> — sharpening the analytics, business strategy,
+        and management thinking that turn engineering decisions into business outcomes.
+      </p>
+
+      <div class="stats">
+        <div>
+          <div class="stat-num">8.12</div>
+          <div class="stat-label">CGPA — B.E. ECE, KPR Institute (Anna University)</div>
+        </div>
+        <div>
+          <div class="stat-num">2</div>
+          <div class="stat-label">IEEE publications during undergraduate research</div>
+        </div>
+        <div>
+          <div class="stat-num">4<em>+</em></div>
+          <div class="stat-label">Salesforce certifications &amp; 9 Trailhead Superbadges</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="expertise">
+  <div class="section-label">Expertise</div>
+  <h2 class="section-title">Where I do my <em>best work.</em></h2>
+
+  <div class="expertise-grid reveal">
+
+    <div class="expertise-card">
+      <div class="expertise-num">/ 01</div>
+      <h3>Salesforce <em>CPQ</em></h3>
+      <p>
+        Products &amp; Bundles, Feature/Option Constraints, MDQ, Discount Schedules, Product &amp; Price Rules,
+        Quote Templates, Subscriptions, Contracts, Custom Actions, Guided Selling, Advanced Approvals, and QCP.
+      </p>
+      <div class="expertise-tags">
+        <span class="tag">QCP</span>
+        <span class="tag">Price Rules</span>
+        <span class="tag">Product Rules</span>
+        <span class="tag">Quote Templates</span>
+        <span class="tag">Advanced Approvals</span>
+      </div>
+    </div>
+
+    <div class="expertise-card">
+      <div class="expertise-num">/ 02</div>
+      <h3>Salesforce <em>Billing</em></h3>
+      <p>
+        Order &amp; Subscription Management, Invoice Generation, Payments, Usage-based Billing, Adjustments,
+        Credit/Debit Notes, Renewals, Refunds, Legal Entity, Taxation, General Ledger, and Rates.
+      </p>
+      <div class="expertise-tags">
+        <span class="tag">Invoicing</span>
+        <span class="tag">Subscriptions</span>
+        <span class="tag">Renewals</span>
+        <span class="tag">Taxation</span>
+        <span class="tag">Rate Management</span>
+      </div>
+    </div>
+
+    <div class="expertise-card">
+      <div class="expertise-num">/ 03</div>
+      <h3>Apex <em>&amp; Development</em></h3>
+      <p>
+        Triggers, Test Classes, Batch Apex, Governor Limits, Exception Handling, DML, SOQL/SOSL,
+        Lightning Web Components, Visualforce, REST/SOAP APIs, and Trigger Action Framework.
+      </p>
+      <div class="expertise-tags">
+        <span class="tag">Apex</span>
+        <span class="tag">LWC</span>
+        <span class="tag">Visualforce</span>
+        <span class="tag">REST/SOAP</span>
+        <span class="tag">SOQL</span>
+      </div>
+    </div>
+
+    <div class="expertise-card">
+      <div class="expertise-num">/ 04</div>
+      <h3>Platform <em>&amp; DevOps</em></h3>
+      <p>
+        Configuration &amp; Customization, Data Modelling, Security &amp; Sharing, Flows, Process Builder, Reports
+        &amp; Dashboards, Sales &amp; Service Cloud, and CI/CD via Gearset, Copado, JetStream, and Changesets.
+      </p>
+      <div class="expertise-tags">
+        <span class="tag">Flows</span>
+        <span class="tag">Gearset</span>
+        <span class="tag">Copado</span>
+        <span class="tag">FlexiPages</span>
+        <span class="tag">CI/CD</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="experience" class="experience">
+  <div class="section-label">Experience</div>
+  <h2 class="section-title">Hands-on work across <em>Salesforce, data, and analytics.</em></h2>
+
+  <div class="timeline">
+
+    <div class="job reveal">
+      <div class="job-period">
+        Jan 2025 — May 2025
+        <br><span class="role-tag">Full-time</span>
+      </div>
+      <div class="job-content">
+        <h3>Salesforce Developer</h3>
+        <div class="job-company">Kriswin Infotech Private Limited</div>
+        <p>Salesforce CPQ &amp; Revenue Cloud project — design, development, and deployment work on assigned modules.</p>
+        <ul class="job-bullets">
+          <li>Worked on a Salesforce CPQ and Lightning Web Components project, handling design, development, and deployment for the modules I was assigned</li>
+          <li>Built global picklists and formula fields to keep data consistent across the org and make field management easier</li>
+          <li>Wrote custom actions and small scripts in Flows and LWC that added the right products to the Quote Line Editor based on the business rules in play</li>
+          <li>Set up Advanced Approvals and customized the approval process using Apex triggers and Flows to fit the way the team actually worked</li>
+          <li>Reworked Lightning record pages (FlexiPages) and page layouts so users could find the fields they needed without scrolling around</li>
+          <li>Built dynamic quote templates that pulled the right fields automatically, so client-facing proposals came out clean and consistent every time</li>
+          <li>Fixed a batch class issue around governor limits and order-of-execution that was holding up a release; rewrote the logic to be bulk-safe and added proper test coverage so it would not break again</li>
+          <li>Followed the standard DEV → QA → UAT → PROD release flow using Gearset and change sets, with tests, error handling, and short documentation notes as a regular habit</li>
+        </ul>
+        <div class="job-tech">
+          <span class="tag">CPQ</span>
+          <span class="tag">Revenue Cloud</span>
+          <span class="tag">Apex</span>
+          <span class="tag">LWC</span>
+          <span class="tag">Flows</span>
+          <span class="tag">Gearset</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="job reveal">
+      <div class="job-period">
+        Jan 2024 — Feb 2024
+        <br><span class="role-tag">Internship</span>
+      </div>
+      <div class="job-content">
+        <h3>Data Analyst Intern</h3>
+        <div class="job-company">Unified Mentor Private Limited · Remote</div>
+        <p>Applied data analytics on a real-world HR dataset, working through cleaning, analysis, and presentation.</p>
+        <ul class="job-bullets">
+          <li>Looked at staff attrition trends at Green Destinations using Python and Tableau, calculated the attrition rate, and checked which factors mattered most — age, tenure, and income</li>
+          <li>Turned the findings into clear charts and short summary notes that HR could actually use to plan retention</li>
+        </ul>
+        <div class="job-tech">
+          <span class="tag">Python</span>
+          <span class="tag">Tableau</span>
+          <span class="tag">HR Analytics</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="job reveal">
+      <div class="job-period">
+        Jul 2022 — Aug 2022
+        <br><span class="role-tag">Internship</span>
+      </div>
+      <div class="job-content">
+        <h3>Data Science Intern</h3>
+        <div class="job-company">SmartKnower Private Limited · Remote</div>
+        <p>Structured Data Science training followed by a hands-on applied project at the end of the program.</p>
+        <ul class="job-bullets">
+          <li>Went through a structured Data Science training program and then worked on a small applied project at the end of it</li>
+          <li>Built a small gender prediction model in Python using acoustic features — basic feature engineering, training, and checking how well it worked on test data</li>
+        </ul>
+        <div class="job-tech">
+          <span class="tag">Python</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Feature Engineering</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="certifications" class="certs-wrap">
+  <div class="section-label">Certifications</div>
+  <h2 class="section-title">Credentialed across the <em>Salesforce stack.</em></h2>
+
+  <div class="reveal">
+
+    <div class="certs-section">
+      <h3 class="certs-subtitle">Salesforce Certifications</h3>
+      <div class="certs-grid">
+        <div class="cert">
+          <div class="cert-badge"><img src="badges/cpq-administrator.png" alt="Salesforce Certified CPQ Specialist" loading="lazy" /></div>
+          <div>
+            <div class="cert-name">CPQ Specialist</div>
+            <div class="cert-issuer">Salesforce</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge"><img src="badges/platform-developer-1.png" alt="Salesforce Certified Platform Developer I" loading="lazy" /></div>
+          <div>
+            <div class="cert-name">Platform Developer I</div>
+            <div class="cert-issuer">Salesforce</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge"><img src="badges/revenue-cloud-consultant.png" alt="Salesforce Certified Revenue Cloud Consultant" loading="lazy" /></div>
+          <div>
+            <div class="cert-name">Revenue Cloud Consultant</div>
+            <div class="cert-issuer">Salesforce</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge"><img src="badges/agentforce-specialist.png" alt="Salesforce Certified Agentforce Specialist" loading="lazy" /></div>
+          <div>
+            <div class="cert-name">Agentforce Specialist</div>
+            <div class="cert-issuer">Salesforce</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="agentblazer-card">
+        <div class="agentblazer-icon">⚡</div>
+        <div class="agentblazer-content">
+          <h4>Agentblazer Innovator 2025</h4>
+          <p>Recognized status on the Salesforce Trailblazer platform for early Agentforce adoption and innovation.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="certs-section">
+      <h3 class="certs-subtitle">Trailhead Superbadges <span style="color: var(--ink-muted); font-style: normal; font-size: 0.85rem; font-family: var(--mono); letter-spacing: 0.05em;">— 9 earned</span></h3>
+      <div class="certs-grid cert-grid-superbadges">
+        <div class="cert">
+          <div class="cert-badge"><img src="badges/superbadge-agentforce-service.webp" alt="Agentforce Service Superbadge" loading="lazy" /></div>
+          <div>
+            <div class="cert-name">Agentforce Service</div>
+            <div class="cert-issuer">Apr 2025</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge"><img src="badges/superbadge-prompt-builder.webp" alt="Prompt Builder Templates Superbadge" loading="lazy" /></div>
+          <div>
+            <div class="cert-name">Prompt Builder Templates</div>
+            <div class="cert-issuer">Apr 2025</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge"><img src="badges/superbadge-user-access-troubleshooting.webp" alt="User Access Troubleshooting Superbadge" loading="lazy" /></div>
+          <div>
+            <div class="cert-name">User Access Troubleshooting</div>
+            <div class="cert-issuer">Aug 2024</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge"><img src="badges/superbadge-billing-super-set.webp" alt="Billing Specialist Super Set" loading="lazy" /></div>
+          <div>
+            <div class="cert-name">Billing Specialist Super Set</div>
+            <div class="cert-issuer">Aug 2024</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge"><img src="badges/superbadge-advanced-billing.webp" alt="Advanced Billing Specialist Superbadge" loading="lazy" /></div>
+          <div>
+            <div class="cert-name">Advanced Billing Specialist</div>
+            <div class="cert-issuer">Aug 2024</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge"><img src="badges/superbadge-flow-administration.webp" alt="Flow Administration Superbadge" loading="lazy" /></div>
+          <div>
+            <div class="cert-name">Flow Administration</div>
+            <div class="cert-issuer">Jul 2024</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge"><img src="badges/superbadge-access-governance.webp" alt="Access Governance Superbadge" loading="lazy" /></div>
+          <div>
+            <div class="cert-name">Access Governance</div>
+            <div class="cert-issuer">Jul 2024</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge"><img src="badges/superbadge-business-administration.webp" alt="Business Administration Specialist Superbadge" loading="lazy" /></div>
+          <div>
+            <div class="cert-name">Business Administration Specialist</div>
+            <div class="cert-issuer">Jul 2024</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge"><img src="badges/superbadge-billing-specialist.webp" alt="Billing Specialist Superbadge" loading="lazy" /></div>
+          <div>
+            <div class="cert-name">Billing Specialist</div>
+            <div class="cert-issuer">Jun 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="certs-section">
+      <h3 class="certs-subtitle">Additional Coursework &amp; Credentials</h3>
+      <div class="certs-grid">
+        <div class="cert">
+          <div class="cert-badge logo-frame"><img src="badges/ibm.svg" alt="IBM Watson" loading="lazy" onerror="this.style.display='none'" /></div>
+          <div>
+            <div class="cert-name">AI Messenger Chatbot — IBM Watson</div>
+            <div class="cert-issuer">Coursera · 2022</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge logo-frame"><img src="badges/dataiku.svg" alt="Dataiku" loading="lazy" onerror="this.style.display='none'" /></div>
+          <div>
+            <div class="cert-name">ML Pipeline — Dataiku</div>
+            <div class="cert-issuer">Coursera · 2022</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge logo-frame"><img src="badges/google.svg" alt="Google" loading="lazy" onerror="this.style.display='none'" /></div>
+          <div>
+            <div class="cert-name">Google Data Analytics (6 courses)</div>
+            <div class="cert-issuer">Coursera</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge logo-frame"><img src="badges/hackerrank.svg" alt="HackerRank" loading="lazy" onerror="this.style.display='none'" /></div>
+          <div>
+            <div class="cert-name">Java (Basic)</div>
+            <div class="cert-issuer">HackerRank</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge logo-frame"><img src="badges/edyoda.svg" alt="EDYODA" loading="lazy" onerror="this.style.display='none'" /></div>
+          <div>
+            <div class="cert-name">Data Structures in Python</div>
+            <div class="cert-issuer">EDYODA / ThinkX Academy</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge logo-frame"><img src="badges/nasscom.svg" alt="NASSCOM FutureSkills Prime" loading="lazy" onerror="this.style.display='none'" /></div>
+          <div>
+            <div class="cert-name">NASSCOM FutureSkills — Acquiring Data (Silver)</div>
+            <div class="cert-issuer">MeitY, Govt. of India</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge logo-frame"><img src="badges/powerbi.png" alt="Power BI Workshop" loading="lazy" onerror="this.style.display='none'" /></div>
+          <div>
+            <div class="cert-name">Power BI Workshop</div>
+            <div class="cert-issuer">LUDIFU · 2022</div>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge logo-frame"><img src="badges/jobaaj.svg" alt="Jobaaj Learnings" loading="lazy" onerror="this.style.display='none'" /></div>
+          <div>
+            <div class="cert-name">Data Science &amp; Analytics</div>
+            <div class="cert-issuer">Jobaaj Learnings · 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="projects" class="projects">
+  <div class="section-label">Academic &amp; Research</div>
+  <h2 class="section-title">Where the <em>engineering</em> meets the <em>research.</em></h2>
+
+  <div class="project-list">
+
+    <div class="project reveal">
+      <div>
+        <div class="project-num">01</div>
+        <div class="project-domain">IEEE Publication · 2024</div>
+      </div>
+      <div>
+        <h3>Secured <em>E-Voting</em> System with biometric authentication</h3>
+        <p class="project-desc">
+          Final-year capstone project at KPR Institute of Engineering and Technology — a secure online
+          voting platform combining face and fingerprint authentication with the LDAP SASL / Kerberos protocol.
+        </p>
+        <ul class="project-highlights">
+          <li>Built a secure online voting platform that uses biometric authentication (face and fingerprint) along with the LDAP SASL / Kerberos protocol for identity checks</li>
+          <li>Made voter authentication and data security stronger and kept the voting process fast, while still protecting voter privacy and the integrity of the election</li>
+          <li>Co-authored research paper presented at IEEE ICC-ROBINS 2024 and published in IEEE Xplore</li>
+        </ul>
+        <div class="job-tech">
+          <span class="tag">Biometrics</span>
+          <span class="tag">LDAP</span>
+          <span class="tag">Kerberos</span>
+          <span class="tag">Security</span>
+          <span class="tag">IEEE</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <div>
+        <div class="project-num">02</div>
+        <div class="project-domain">IEEE Publication · 2023</div>
+      </div>
+      <div>
+        <h3>Universal Robot for <em>authenticated drug delivery</em></h3>
+        <p class="project-desc">
+          Research project at KPR Institute on automated medication handling — a Universal Robot framework
+          that combines robotic motion control with biometric patient verification for safer hospital workflows.
+        </p>
+        <ul class="project-highlights">
+          <li>Programmed a Universal Robot in Python to handle medication delivery — picking the medicine, verifying the patient through biometrics, and placing it for collection</li>
+          <li>The point was to make hospital drug delivery faster and safer, while preventing misuse by limiting access to the right patient only</li>
+          <li>Co-authored research paper presented at IEEE ICAECC 2023 and published in IEEE Xplore</li>
+        </ul>
+        <div class="job-tech">
+          <span class="tag">Python</span>
+          <span class="tag">Robotics</span>
+          <span class="tag">Healthcare</span>
+          <span class="tag">Automation</span>
+          <span class="tag">IEEE</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <div>
+        <div class="project-num">03</div>
+        <div class="project-domain">Data Analytics · 2024</div>
+      </div>
+      <div>
+        <h3>Green Destinations — <em>employee attrition analysis</em></h3>
+        <p class="project-desc">
+          Independent data analytics project completed during the Unified Mentor internship —
+          identifying drivers of staff turnover and turning the findings into recommendations HR could act on.
+        </p>
+        <ul class="project-highlights">
+          <li>Used Python and Tableau to look at why staff were leaving Green Destinations; calculated the attrition rate and looked at age, tenure, and income as possible reasons</li>
+          <li>Put together a few retention ideas for HR backed by the data, presented through clear charts and short summary notes</li>
+          <li>Code on GitHub: <a href="https://github.com/kv-darwin/Green-Destination-Project" target="_blank" rel="noopener" style="color:var(--accent);">kv-darwin/Green-Destination-Project</a></li>
+        </ul>
+        <div class="job-tech">
+          <span class="tag">Python</span>
+          <span class="tag">Tableau</span>
+          <span class="tag">HR Analytics</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <div>
+        <div class="project-num">04</div>
+        <div class="project-domain">Machine Learning · 2022</div>
+      </div>
+      <div>
+        <h3>Gender prediction from <em>acoustic features</em></h3>
+        <p class="project-desc">
+          Independent ML project from the SmartKnower Data Science internship — a small Python model
+          that predicts gender from voice acoustic features.
+        </p>
+        <ul class="project-highlights">
+          <li>Built a small machine learning model in Python that predicts gender from voice features; cleaned the data, picked useful features, trained the model, and checked how it performed</li>
+          <li>Code on GitHub: <a href="https://github.com/kv-darwin/Python-Project" target="_blank" rel="noopener" style="color:var(--accent);">kv-darwin/Python-Project</a></li>
+        </ul>
+        <div class="job-tech">
+          <span class="tag">Python</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Acoustic Features</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="education" class="edu-pub-wrap">
+  <div class="section-label">Education &amp; Research</div>
+  <h2 class="section-title">Foundations, <em>research</em>, and the road to <em>UT Dallas.</em></h2>
+
+  <div class="edu-pub-grid reveal">
+
+    <div class="edu-block">
+      <h3>Education</h3>
+      <div class="edu-card">
+        <div class="edu-degree">Bachelor of Engineering — Electronics &amp; Communication</div>
+        <div class="edu-school">KPR Institute of Engineering &amp; Technology · Anna University, Chennai</div>
+        <div class="edu-detail">2020 — 2024 · CGPA 8.12 / 10 · First Class</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">Higher Secondary Certificate (HSC)</div>
+        <div class="edu-school">Sri Aurobindo Mira Matriculation Higher Secondary School</div>
+        <div class="edu-detail">2019 — 2020 · 65%</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">Secondary School (SSLC)</div>
+        <div class="edu-school">Sri Aurobindo Mira Matriculation Higher Secondary School</div>
+        <div class="edu-detail">2017 — 2018 · 80%</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">Duolingo English Test</div>
+        <div class="edu-school">English Proficiency Assessment</div>
+        <div class="edu-detail">2026 · Score 110 · Upper Intermediate (CEFR B2)</div>
+      </div>
+    </div>
+
+    <div class="pub-block">
+      <h3>IEEE Publications</h3>
+      <div class="pub-card">
+        <div class="pub-title">Design and Implementation of Secured E-Voting System</div>
+        <div class="pub-meta">IEEE · ICC-ROBINS · 2024</div>
+        <a href="https://ieeexplore.ieee.org/document/10533907" target="_blank" rel="noopener" class="pub-link">
+          Read on IEEE Xplore →
+        </a>
+      </div>
+      <div class="pub-card">
+        <div class="pub-title">Effective Delivery of Drugs to Authenticated Patients Using Universal Robots</div>
+        <div class="pub-meta">IEEE · ICAECC · 2023</div>
+        <a href="https://ieeexplore.ieee.org/document/10560184" target="_blank" rel="noopener" class="pub-link">
+          Read on IEEE Xplore →
+        </a>
+      </div>
+
+      <h3 style="margin-top: 2rem;">Workshops Attended</h3>
+      <div class="pub-card">
+        <div class="pub-title">Salesforce TDX 2025 — Bangalore, India</div>
+        <div class="pub-meta">Deep-dive into Agentforce, Data Cloud, and the platform's emerging AI direction</div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-title">Red Hat Certified System Administrator Workshop</div>
+        <div class="pub-meta">KPR Institute of Engineering and Technology · 2021</div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-title">Build a Face Recognition Application using Python</div>
+        <div class="pub-meta">GUVI · AI-For-India Event · 2021</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="contact-label">— Get in touch</div>
+  <h2>Open to <em>conversations</em><br>about technology, research, and <em>UT Dallas.</em></h2>
+  <a href="mailto:darwinloyality@gmail.com" class="contact-email">darwinloyality@gmail.com</a>
+
+  <div class="contact-links">
+    <a href="mailto:darwinloyality@gmail.com" class="contact-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email
+    </a>
+    <a href="https://www.linkedin.com/in/darwin-balaji-k-953431218" target="_blank" rel="noopener" class="contact-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://github.com/kv-darwin" target="_blank" rel="noopener" class="contact-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      GitHub
+    </a>
+    <a href="https://www.salesforce.com/trailblazer/x63epf4rfy0yocm6yq" target="_blank" rel="noopener" class="contact-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      Trailblazer
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Darwin Balaji Kabilan · Madurai, India</div>
+  <div>Built for the journey to UT Dallas</div>
+</footer>
+
+<script>
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 30);
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+  reveals.forEach((el) => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 60;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
